@@ -1,0 +1,38 @@
+//import BootstrapVue from 'bootstrap-vue';
+import { shallowMount } from '@vue/test-utils'
+import Login from '@/views/Login.vue'
+import firebase from 'firebase/app';
+
+//const localVue = createLocalVue();
+//localVue.use(BootstrapVue);
+jest.mock('firebase/app', () => {
+    return {
+      auth: jest.fn(),
+    };
+  });
+
+const wrapper = shallowMount(Login, { 
+    // localVue,
+    // stubs: ['router-link', 'router-view'],
+    // attachToDocument: true 
+});
+
+describe('Logged Test',() =>{
+
+    test('Comprobar Usuario Correctacmente Logeado', async () =>{
+        wrapper.setData({ email :'luis_tl17@hotmail.com', password :'luis123' })
+        const button = wrapper.find('[type=submit]')
+        await button.trigger('click')
+        expect(firebase.auth.signInWithEmailAndPassword).toBeCalledTimes(1);
+
+        })
+    test('Comprobar Usuario no se a podido loguear', async () =>{
+
+        wrapper.setData({ email :'luis_tl17@hotmail.com', password :'luis' })
+        const button = wrapper.find('[type=submit]')
+        await button.trigger('click')
+        expect(wrapper.vm.userLogged).toBe(false)
+    })
+
+
+})

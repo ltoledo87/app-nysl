@@ -1,0 +1,33 @@
+.navbar-brand {
+   text-align: center;
+   a{
+   text-decoration:none;
+   color: $text-color-tittles;
+   font-weight: bold;
+   font-size: 2em;
+   }:hover{
+      text-decoration:none;
+   }
+   img{
+   width: 50px ;
+   vertical-align: middle;
+   }
+}
+.nav-item{
+ a:hover{
+   text-decoration:none;
+}
+}
+.router-link-exact-active {
+   color: #2BE502; }
+
+.slide-fade-enter-active{
+   transition: all .3s ease
+}
+.slide-fade-leave-active{
+   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0)
+}
+.slide-fade-enter, .slide-fade-leave-to{
+   transform: translateX(10px);
+   opacity: 0;
+}

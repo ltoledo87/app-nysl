@@ -1,0 +1,17 @@
+.cardTextInput{
+    grid-column: 1 / span 1;
+    grid-row: auto;
+    margin-top: 10px;
+    .inputRegi{
+      width: 95%;
+      background-color: $color-terciario;
+      border-radius: 5px;
+      padding: 10px;
+    }
+}
+.imgLogin{
+  img{
+    width: 200px ;
+    vertical-align: middle;
+  }
+}
