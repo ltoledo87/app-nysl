@@ -49,7 +49,8 @@ export default {
       email: '',
       password: '',
       emailValid:null,
-      userLogged: null
+      userLogged: null,
+      errorMsg: null
     }
   },
   methods: {
@@ -79,7 +80,7 @@ export default {
     },
      makeToastError() {
         this.$bvToast.toast(this.errorMsg, {
-          title: `NYSL`,
+          title: `NYSL ERROR`,
           toaster: 'b-toaster-top-center',
           variant: 'danger',
           solid: true
